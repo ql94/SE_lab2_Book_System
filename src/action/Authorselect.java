@@ -12,7 +12,6 @@ public class Authorselect extends ActionSupport {
 
 	private String authorname;
 	private List<book> booklist = new ArrayList<book>();
-
 	public String execute() {
 		String ret = ERROR;
 		Connection conn = null;
@@ -21,10 +20,10 @@ public class Authorselect extends ActionSupport {
 			Class.forName("com.mysql.jdbc.Driver");
 			conn = DriverManager.getConnection(URL, "lxjzjz50wo", "1zlhyhk1hx4m022z3425lml4klzwy0zmxmx0hy11");	
 			
-			String sql = "select AuthorID from Author where Name='"+authorname+"'";
+			String sq = "select AuthorID from Author where Name='"+authorname+"'";
 			String sql1 = new String();
 			ResultSet rs,rs1=null;
-			PreparedStatement ps = conn.prepareStatement(sql);
+			PreparedStatement ps = conn.prepareStatement(sq);
 			rs = ps.executeQuery();
 			while(rs.next())
 			{

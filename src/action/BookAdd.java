@@ -6,7 +6,6 @@ import po.book;
 import po.author;
 
 import com.opensymphony.xwork2.ActionSupport;
-
 public class BookAdd extends ActionSupport {
 	private String newISBN, newTitle, newAuthorID, newPublisher,
 			newPublishDate, newPrice;
@@ -37,6 +36,7 @@ public class BookAdd extends ActionSupport {
 			PreparedStatement ps2 = conn.prepareStatement(sql1);
 			int rs2 = ps2.executeUpdate();
 			ret = SUCCESS;
+			//ok
 		} catch (Exception e) {
 			e.printStackTrace();
 			ret = ERROR;

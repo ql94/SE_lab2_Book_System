@@ -21,8 +21,8 @@ public class BookSelect extends ActionSupport {
 			conn = DriverManager.getConnection(URL, "lxjzjz50wo", "1zlhyhk1hx4m022z3425lml4klzwy0zmxmx0hy11");
 			
 			ResultSet rs, rs1 = null;
-			String sql = "select * from Book where ISBN='" + BookID + "'";
-			String sql1 = new String();
+			String sql = "select * from Book where ISBN ='" + BookID + "'";
+			String sql11 = new String();
 			PreparedStatement ps = conn.prepareStatement(sql);
 			rs = ps.executeQuery();
 			while (rs.next()) {
@@ -32,10 +32,10 @@ public class BookSelect extends ActionSupport {
 				book.setPublisher(rs.getString(4));
 				book.setPublishDate(rs.getString(5));
 				book.setPrice(rs.getString(6));
-				sql1 = "select * from Author where AuthorID='"
+				sql11 = "select * from Author where AuthorID='"
 						+ rs.getString("AuthorID") + "'";
 			}
-			PreparedStatement ps1 = conn.prepareStatement(sql1);
+			PreparedStatement ps1 = conn.prepareStatement(sql11);
 			rs1 = ps1.executeQuery();
 			while (rs1.next()) {
 				author.setAuthorID(rs1.getString(1));
